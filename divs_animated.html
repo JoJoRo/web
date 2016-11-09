@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<style>
+			body{
+				position: absolute;
+			}
+			[class*=layer]{
+				height: 200px;
+				width: 200px;
+				cursor: pointer;
+			}
+			.layer0{
+			    position: absolute;
+				background: red;
+				z-index: 10;
+			}
+			[class*=layer]{
+				position: absolute;
+				top: 0px;
+			}	
+			.layer1{
+				background: blue;
+			}			
+			.layer2{
+				background: black;
+			}
+			.layer3{
+				background: yellow;
+			}
+			.layer4{
+				background: pink;
+			}						
+			.layer5{
+				background: green;
+			}
+			.layer6{
+				background: orange;
+			}			
+			.layer7{
+				background: silver;
+			}			
+			.layer8{
+				background: teal;
+			}
+			.layer9{
+				background: purple;
+			}			
+			
+							
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.layer').hover(
+				function(){
+					$(this).css('z-index', 100);
+				});
+				
+				// click
+				$('.layer0').on('click', function(){
+					var layers=$('[class*="layer"]');
+					var max_z=$(layers[0]).css('z-index');
+					$.each(layers, function(index, value){
+						setTimeout(function(){
+							var top=index*50;
+							var left=index*50;
+							var z=max_z-index;
+							$(value).animate({top: top+'px', zIndex: z, left: left}, 500);
+						}, 500 + (index * 500));
+					});
+				});
+			});
+			
+		</script>
+	</head>
+	
+
+<body>
+	
+	<div class="contenedor">
+	
+		<div class="layer0">
+		
+		</div>
+		<div class="layer1 ">
+		
+		</div>
+		<div class="layer2 ">
+		
+		</div>
+		<div class="layer3 ">
+		
+		</div>
+		<div class="layer4 ">
+		
+		</div>
+		<div class="layer5 ">
+		
+		</div>
+		<div class="layer6 ">
+		
+		</div>		
+		<div class="layer7 ">
+		
+		</div>		
+		<div class="layer8 ">
+		
+		</div>				
+		<div class="layer9 ">
+		
+		</div>
+			
+	</div>
+</body>
+</html>
