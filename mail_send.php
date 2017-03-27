@@ -2,10 +2,11 @@
 <html class="client-nojs" lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8"/>
-<title>Internet protocol suite - Wikipedia</title>
+<title>Email with PHP</title>
 
   </head>
   <body>
+	  <p>Sending email with PHP</p>
 	  <?php
 		$to = 'destination@server.whatever';
 		$subject = 'Sent from 000webhost';
